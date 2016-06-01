@@ -1,8 +1,0 @@
-﻿<Canvas 
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:Core="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:Namespace="clr-namespace:PaintCodeNet" 
-    xmlns:Properties="clr-namespace:PaintCodeNet.Properties" 
-    Core:Class="PaintCodeNet.Views.CustomCanvas">
-    
-</Canvas>
