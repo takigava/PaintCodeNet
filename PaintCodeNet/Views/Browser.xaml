@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="PaintCodeNet.Views.Browser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf" 
+             xmlns:hx="http://helix-toolkit.org/wpf"
+             syncfusion:DockingManager.SideInDockedMode="Right" 
+             syncfusion:DockingManager.State="Dock" 
+             syncfusion:DockingManager.DesiredWidthInDockedMode="200"  
+             syncfusion:DocumentContainer.MDIBounds="30,30,300,300"  
+             syncfusion:DockingManager.DesiredHeightInFloatingMode="200"
+             syncfusion:DockingManager.Header="Browser"
+             Name="BrowserPane"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <hx:HelixViewport3D IsHeadLightEnabled="True" IsRotationEnabled="False" ShowFrameRate="True" ShowViewCube="False" CoordinateSystemLabelForeground="White" CoordinateSystemLabelX="X" CoordinateSystemLabelY="Y" RenderOptions.EdgeMode="Aliased" RenderOptions.BitmapScalingMode="NearestNeighbor" ZoomExtentsWhenLoaded="True">
+            <hx:HelixViewport3D.Camera>
+                <PerspectiveCamera Position="0,0,2" LookDirection="0,0,-2" />
+            </hx:HelixViewport3D.Camera>
+            <hx:HelixViewport3D.Children>
+                <hx:GridLinesVisual3D Width="5" Length="5" Thickness="0.01" MinorDistance="0.1" MajorDistance="1" Fill="Black"/>
+                <hx:HelixVisual3D>
+                    <hx:HelixVisual3D.Content>
+                        <!--Установка освещения - прямой свет-->
+                        <DirectionalLight Color="White" Direction="-1,-1,-2" />
+                    </hx:HelixVisual3D.Content>
+                </hx:HelixVisual3D>
+                <hx:HelixVisual3D>
+                    <hx:HelixVisual3D.Content>
+                        <GeometryModel3D>
+                            <!--Определяем геометрию объекта-->
+                            <GeometryModel3D.Geometry>
+                                <MeshGeometry3D Positions="-0.5,0,0 0,0.5,0 0.5,0,0" TriangleIndices="0, 2,1" Normals="0,0,1 0,0,1 0,0,1" TextureCoordinates="-0.5,0 0,0.5 0.5,0"/>
+                            </GeometryModel3D.Geometry>
+                            <!--Установка материала - красный цвет-->
+                            <GeometryModel3D.Material>
+                                <DiffuseMaterial>
+                                    <DiffuseMaterial.Brush>
+                                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                            <LinearGradientBrush.GradientStops>
+                                                <GradientStop Color="Yellow" Offset="0" />
+                                                <GradientStop Color="Red" Offset="0.25" />
+                                                <GradientStop Color="Blue" Offset="0.75" />
+                                                <GradientStop Color="LimeGreen" Offset="1" />
+                                            </LinearGradientBrush.GradientStops>
+                                        </LinearGradientBrush>
+                                    </DiffuseMaterial.Brush>
+                                </DiffuseMaterial>
+                            </GeometryModel3D.Material>
+                        </GeometryModel3D>
+                    </hx:HelixVisual3D.Content>
+                </hx:HelixVisual3D>
+            </hx:HelixViewport3D.Children>
+
+        </hx:HelixViewport3D>
+    </Grid>
+</UserControl>

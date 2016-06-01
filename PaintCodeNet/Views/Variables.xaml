@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="PaintCodeNet.Views.Variables"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf" 
+             syncfusion:DockingManager.SideInDockedMode="Bottom" 
+             syncfusion:DockingManager.State="Dock" 
+             syncfusion:DockingManager.DesiredWidthInDockedMode="300"  
+             syncfusion:DocumentContainer.MDIBounds="30,30,300,300"  
+             syncfusion:DockingManager.DesiredHeightInFloatingMode="300"
+             syncfusion:DockingManager.Header="Variables"
+             syncfusion:DockingManager.TargetNameInDockedMode="ColorsPane"
+             xmlns:variableTemplateDataBinding="clr-namespace:PaintCodeNet.TemplateSelectors"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/PaintCodeNet;component/Resources/Variables.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <syncfusion:TreeViewAdv Name="VariablesTreeView" 
+                                          
+                                        ShowRootLines="False" 
+                                        IsScrollOnExpand="True" 
+                                        MultiColumnEnable="False" 
+                                        Margin="-20,0,0,0"
+                            AllowDragDrop="False">
+        <syncfusion:TreeViewAdv.ItemTemplateSelector>
+            <variableTemplateDataBinding:VariableTreeViewTemplateSelector 
+                            ExpressionTreeViewDataTemplate="{StaticResource ExpressionTreeViewDataTemplate}"
+                            NumberTreeViewDataTemplate="{StaticResource NumberTreeViewDataTemplate}"
+                            FractionTreeViewDataTemplate="{StaticResource FractionTreeViewDataTemplate}"
+                            AngleTreeViewDataTemplate="{StaticResource AngleTreeViewDataTemplate}"
+                            TextTreeViewDataTemplate="{StaticResource TextTreeViewDataTemplate}"
+                            BooleanTreeViewDataTemplate="{StaticResource BooleanTreeViewDataTemplate}"
+                            PointTreeViewDataTemplate="{StaticResource PointTreeViewDataTemplate}"
+                            SizeTreeViewDataTemplate="{StaticResource SizeTreeViewDataTemplate}"
+                            RectangleTreeViewDataTemplate="{StaticResource RectangleTreeViewDataTemplate}"/>
+        </syncfusion:TreeViewAdv.ItemTemplateSelector>
+    </syncfusion:TreeViewAdv>
+</UserControl>
