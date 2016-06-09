@@ -2,7 +2,7 @@
 
 PaintCodeNet is windows port of PaintCode application for Mac OS.
 
-<a href="url"><img src="http://i.imgur.com/5T6engZ.png" height="215" width="400" ></a>
+<a href="http://i.imgur.com/5T6engZ.png"><img src="http://i.imgur.com/5T6engZ.png" height="215" width="400" ></a>
 
 ### Remark
 All icons picked up from PaintCode for Mac OS and all rights on icons are owned by [PixelCut](http://www.paintcodeapp.com/). 
